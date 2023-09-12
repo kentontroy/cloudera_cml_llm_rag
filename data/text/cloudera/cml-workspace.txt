@@ -1,0 +1,15 @@
+CML workloads are executed within Workspaces and in turn within Projects and Teams. To the CML User, the Workspace is a high-level construct to create CML Projects, store CML Runtimes, and perform other administrative tasks such as creating Resource Profiles. 
+
+However, under the covers, the Workspace is better defined as an auto-scaling service for Data Science leveraging Kubernetes. The Kubernetes cluster runs in Cloud Virtual Machines using AKS and EKS in the Public Cloud or OCP and Cloudera ECS in the Private Cloud. The CML Administrator or Data Scientist is not required to know or handle Kubernetes in any way. CML automatically deploys and manages the infrastructure resources for you in your CDP Environment of choice.
+
+When a Workspace is created for the first time a node is deployed to the underlying infrastructure. This is a fixed resource that is required to run at all times for a small cost.
+
+Subsequently, when a CML User runs a workload such as a Notebook, a Model API Endpoint, or a Batch Job, the CML Workspace provisions the necessary Pod(s) thus requesting a second node from the underlying infrastructure. 
+
+As mentioned above, the auto-scaling process is fully automated and does not require any supervision. Auto-scaling events are fast and designed so that CML Users are not aware of them. Running workloads are not affected by the auto-scaling event e.g. running Sessions will continue undisturbed. If needed, any pending workloads such as new CML Sessions or previously scheduled CML Jobs will be queued automatically until new resources are deployed.
+
+At a high level, the pods carve out resources from the node(s) which is then released when the workload is complete. Thus, the CML Customer is only charged on the go as cloud resources are consumed and then discarded. 
+
+The CML User explicitly picks the amount of CPU, Memory and optionally GPU resources when launching the workload. This amount is called a Resource Profile (e.g. 1 CPU / 2 GiB Mem) and it is predefined by the CML Admin at the Workspace level in order to provide an approval process and prevent Data Scientists from consuming too many resources without control.
+
+

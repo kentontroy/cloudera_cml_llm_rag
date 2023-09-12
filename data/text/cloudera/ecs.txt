@@ -1,0 +1,17 @@
+Cloudera Manager provides tools for managing and monitoring the CDP Private Cloud Embedded Container Service.
+
+The Embedded Container Service (ECS) service enables you to run CDP Private Cloud Data Services by creating container-based clusters in your data center. In addition to the option to use OpenShift, which requires that you deploy and manage the Kubernetes infrastructure, you can also deploy a Embedded Container Service cluster, which creates and manages an embedded Kubernetes infrastructure for use with CDP Private Cloud Data Services. Installing, configuring, and managing OpenShift is not required. You only need to provide hosts on which to install the service and Cloudera Manager sets up the Embedded Container Service cluster and also provides management and monitoring of the cluster.
+
+When you create an Embedded Container Service cluster, two new services are added to the cluster:
+
+Embedded Container Service (ECS) service. The ECS service has two roles:
+
+ECS Server -- runs on a single host in the Embedded Container Service cluster.
+
+ECS Agent -- runs on all hosts except the host running the Server role in the Embedded Container Service Cluster.
+
+Docker service. The Docker service has a single role:
+
+Docker Server -- runs on all hosts in the Embedded Container Service Cluster.
+
+

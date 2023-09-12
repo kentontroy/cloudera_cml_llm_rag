@@ -1,0 +1,11 @@
+When deploying the Workspace for the first time, the user is prompted to select an instance type and an Autoscale Range (see image below). In the Public Cloud, these are AWS or Azure instances. The Autoscale Range is simply a min and max boundary of the instances that can be deployed by the Service. 
+
+Typically, the more CPU, Memory, and GPU resources available per instance, the higher the hourly cost to run them but the more CML workloads can be deployed per instance without requiring the autoscaler to deploy an additional node.
+
+Because a typical workload such as a Data Exploration Notebook only requires a small Resource Profile, it is not uncommon to have multiple users working concurrently within the same node and thus at a fairly limited hourly cost. This means that instance types of relatively small size can be chosen when deploying a workspace. In the event of more horsepower being required, the Workspace will simply autoscale by adding as many instances as required and allowed by the Workspace Autoscale Range. 
+
+However, if you plan on running workloads that cannot horizontally scale in a distributed fashion with frameworks such as Spark, TensorFlow, etc., then it may make sense to choose a more powerful instance type. This could be the case in Time Series Machine Learning where algorithms cannot always be distributed.
+
+Finally, it’s important to note that CML Instance Types and autoscale ranges can be changed even after a Workspace has been deployed. 
+
+ 

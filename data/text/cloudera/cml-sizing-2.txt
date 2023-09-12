@@ -1,0 +1,11 @@
+With all these considerations in mind, we recommend you go through a similar exercise as below when planning your Workspace deployment. 
+
+Step 1: Estimate the number of CML Users and optionally whether these will be working within the same or different Teams, Use Cases, and CDP Data Lakes.
+
+Step 2: Estimate average and peak CPU, Memory, and optionally GPU consumption per User. If planning on more than one Team, determine if the average and peak dramatically varies between them.
+
+Step 3: Decide if you need more than one workspace. Try to group users into Teams and Use Cases as much as reasonably possible based on similarities in Data Lake Access, average and peak consumption. Other factors may include whether users need GPUs, special Ranger ACLs, and types of workloads (e.g. primarily hosting API Model Endpoints vs Exploratory Data Science in Notebooks vs Spark ETL in CML Jobs). 
+
+Step 4: Sum up all CPU, Memory, and GPU required per workspace at peak and average, then add 20%. 
+
+

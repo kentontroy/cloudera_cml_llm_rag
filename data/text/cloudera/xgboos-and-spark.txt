@@ -1,0 +1,9 @@
+In Machine Learning, Decision Tree methods are a type of Supervised Learning model. They have been used for decades in both classification and regression tasks. There are many types; generally, they are constructed by identifying ways to split data into hierarchical structures. Data is split into leaf nodes from the top of the tree by using features in order of predictive importance. Decision trees are highly interpretable but are known to suffer from a tendency to overfit the data.
+
+Ensemble methods combine multiple learners to increase model performance. Anyone can create one by combining existing models for a given task but typically they are applied to Decision Trees. Ensemble methods such as Random Forests, bagging, and Gradient Boosting iteratively reward good base learners to ultimately yield models with better accuracy and lower variance.
+
+XGBoost stands for Extreme Gradient Boosting and is a scalable, distributed gradient-boosted decision tree (GBDT) machine learning library. It is very popular among data scientists because of its consistent results across many Kaggle competitions and research projects in academia.
+
+Apache Spark is a powerful open-source engine for big data processing and analytics. Combining XGBoost and Spark allows you to leverage the model performance gains provided by the former while distributing the work to the latter. This can dramatically improve the quality and performance of your Machine Learning models.
+
+
