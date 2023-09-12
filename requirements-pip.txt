@@ -1,6 +1,0 @@
-compel
-sentence_transformers
-bitsandbytes
-torch
-gradio
-
