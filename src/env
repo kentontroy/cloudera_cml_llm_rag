@@ -1,0 +1,55 @@
+################################################################################################
+# Section: Path and model settings
+################################################################################################
+DB_FAISS_PATH = "../vectorstore"
+LLM_MODEL_PATH = "../models"
+LLM_MODEL_FILE = "mistral-7b-instruct-v0.1.Q4_K_M.gguf"
+GPT4ALL_MODEL_PATH = "../models/ggml-model-gpt4all-falcon-q4_0.bin"
+EMBEDDINGS_MODEL_PATH = "sentence-transformers/all-MiniLM-L6-v2"
+
+################################################################################################
+# Section: Indexes and prompts
+################################################################################################
+RETRIEVER_INDEX_NAME = "cloudera_pse_support"
+PROMPT_TEMPLATE_NAME = ".blog"
+
+################################################################################################
+# Section: Model parameters
+################################################################################################
+# The maximum number of tokens to generate
+MODEL_PARAM_MAX_TOKENS = 3000
+# A larger context capacity allows the model to attend to more of the corpus
+MODEL_PARAM_CONTEXT_LEN = 4096
+# The number of tokens to process in parallel
+MODEL_PARAM_BATCH_SIZE = 128
+# Higher values create more diversity in the response and can stray away from context
+MODEL_PARAM_TEMPERATURE = 0.1
+# Helps with adjusting the model’s sampling. Instead of using the full distribution, 
+# the model only samples from the K most probable tokens. K=1 creates the same behavior
+# as temperature=0. For GPT4ALL, the default is K = 40
+MODEL_PARAM_TOP_K = 40
+# Selects the minimum number of tokens such that the sum of the probabilities of occurence
+# for each token totals to the top_p setting
+MODEL_PARAM_TOP_P = 0.25
+# Keep the model in memory if True
+MODEL_PARAM_MLOCK = False
+# Number of threads, default is 4 for GPT4ALL
+MODEL_PARAM_THREADS = 8
+# The penalty to apply to repeated tokens
+MODEL_PARAM_REPEAT_PENALTY = 1.1
+# The number of tokens to look back when applying the repeat_penalty
+MODEL_PARAM_N_TOKENS_SIZE = 64
+# Control GPU usage
+MODEL_PARAM_GPU_LAYERS = 1
+
+################################################################################################
+# Section: Output configuration
+################################################################################################
+TOKENS_PER_STREAM_OUTPUT = 50
+
+################################################################################################
+# Section: Model tracking
+################################################################################################
+MODEL_TRACKING_ENABLED = True
+MODEL_TRACKING_DIRECTORY = "../logs/tracking"
+
