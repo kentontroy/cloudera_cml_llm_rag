@@ -5,7 +5,7 @@ import ast
 import os
 import numpy as np
 import pandas as pd
-import spacy
+import pandasql as ps
 
 #####################################################################################
 # Read triples from file into a dataframe
@@ -27,29 +27,22 @@ def readTriplesFromFile(filePath: str) -> pd.DataFrame:
 #####################################################################################
 # Get unique subjects and objects
 #####################################################################################
-def getUniqueSubjectsAndObjects(df: pd.DataFrame) -> pd.DataFrame:
+def getTriples(df: pd.DataFrame, label: str) -> pd.DataFrame:
   subjects = df["Subject"].map(str)
   objects = df["Object"].map(str)
-  values = np.unique(np.concatenate((subjects, objects)))
-  df = pd.DataFrame(values, columns=["Raw_Entity"])
-  return df
+  query = f"""SELECT Page, Subject, Object, Predicate 
+              FROM df 
+              WHERE Subject LIKE '{label}%' OR Object LIKE '{label}%'
+           """
+  return ps.sqldf(query, locals())
 
-#####################################################################################
-# Get named entities
-#####################################################################################
-def getNamedEntities(rawDf: pd.DataFrame) -> pd.DataFrame:
-  ner = spacy.load("en_core_web_sm")
-  text = ner(", ".join(rawDf["Raw_Entity"]))
-  for w in text.ents:
-    print(w.text, w.label_)
 
 if __name__ == "__main__":
   parser = argparse.ArgumentParser()
-  parser.add_argument("-f", "--file", type=str, required=True, help="Specify filename")
+  parser.add_argument("-f", "--file", type=str, required=True, help="Specify the filename containing the triples")
+  parser.add_argument("-l", "--label", type=str, required=True, help="Specify the label of interest")
   args = parser.parse_args()
 
   df = readTriplesFromFile(filePath = args.file)
-  raw = getUniqueSubjectsAndObjects(df = df)
-  getNamedEntities(rawDf = raw)
-  
-  print(raw)
+  dfQuery = getTriples(df = df, label = args.label)
+  print(dfQuery) 

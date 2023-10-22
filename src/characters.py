@@ -1,0 +1,62 @@
+characters = [
+####################
+  "Stark",
+####################
+  "Arya",
+  "Rob",
+  "Jon",
+  "Ned",
+  "Eddard",
+  "Sansa",
+  "Bran",
+  "Catelyn",
+####################
+  "Baratheon",
+####################
+  "Robert",
+  "Joffrey",
+  "Tommen",
+  "Stannis",
+####################
+  "Lannister",
+####################
+  "Jaime",
+  "Cersei",
+  "Tyrion",
+  "Tywin",
+####################
+  "Targaryen",
+####################
+  "Daenerys",
+  "Khaleesi",
+  "Viserys",
+####################
+  "Mormont",
+####################
+  "Jorah",
+  "Jeor",
+####################
+  "Greyjoy",
+####################
+  "Theon",
+  "Yara",
+####################
+  "Bolton",
+####################
+  "Ramsay",
+  "Roose",
+####################
+# OTHER
+####################
+  "Khal",
+  "Drogo",
+  "Davos",
+  "Petyr",
+  "Littlefinger",
+  "Sandor",
+  "The Hound",
+  "Melisandre",
+  "Varys",
+  "Brienne"
+]
+
