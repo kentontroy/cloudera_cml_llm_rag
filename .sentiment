@@ -1,0 +1,9 @@
+Classify the text into neutral, negative or positive sentiment.
+Positive This is awesome!
+This is bad! Negative
+Wow that movie was rad!
+Positive
+
+Context: {context}
+Text: {message}
+Sentiment:
