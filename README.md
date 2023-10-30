@@ -39,7 +39,7 @@ For detailed instructions on how to run these scripts, see the [documentation](h
 
 # Example use cases
 
-## Python code generation example
+## 1. Python code generation example
 ![image](./images/example-dynamic-programming.png)
 
 # Installing outside of CML (e.g. on your laptop or within an EC2)
