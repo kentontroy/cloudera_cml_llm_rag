@@ -1,0 +1,3 @@
+Please answer the question using the context as background information.
+Context: {context}
+Question: {message}
