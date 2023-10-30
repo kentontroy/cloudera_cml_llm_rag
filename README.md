@@ -47,7 +47,7 @@ For detailed instructions on how to run these scripts, see the [documentation](h
 ```
 git clone https://github.com/kentontroy/cloudera_cml_llm_rag
 ```
-## Untar the pre-created FAISS vector stores for RAG examples
+## Untar the pre-populated FAISS vector stores for RAG examples
 ```
 tar xvzf vectorstore.tar.gz
 ```
