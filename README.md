@@ -38,14 +38,21 @@ Please note that Cloudera does not provide benchmarking results to support these
 For detailed instructions on how to run these scripts, see the [documentation](https://docs.cloudera.com/machine-learning/cloud/index.html).
 
 # Example use cases
+
+## Python code generation example
 ![image](./images/example-dynamic-programming.png)
 
 # Installing outside of CML (e.g. on your laptop or within an EC2)
-
+## Manually clone the git repo
+```
 git clone https://github.com/kentontroy/cloudera_cml_llm_rag
-
+```
+## Untar the pre-created FAISS vector stores for RAG examples
+```
 tar xvzf vectorstore.tar.gz
-
+```
+## Download the model files
+```
 cd jobs
 
 Change the path in download_models.py:
@@ -59,11 +66,11 @@ The above assumes that you executed: mkdir models in the top-level directory fir
 
 Finally, run: 
 python download_models.py
-
+```
+## Manually set the CDSW_APP_PORT where Gradio runs
+```
 Add an environment variable in .env that references a port of your choosing for CDSW_APP_PORT. Do not do this if you are running the Gradio application in CML as
 CML will natively expose the same environment variable.
 
-
-
 Wherever the model files are stored, change the LLM_MODEL_PATH entry in .env to point to the correct directory.
-
+```
