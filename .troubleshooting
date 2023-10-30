@@ -1,0 +1,4 @@
+The context contains a detailed stack trace from a Python program that failed. Please provide feedback on fixing the problem.
+Context: {context}
+Question: {message}
+Feedback:"""
