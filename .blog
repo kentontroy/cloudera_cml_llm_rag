@@ -1,0 +1,4 @@
+Use the given context to write a 300 word blog post about the topic cited below:
+Context: {context}
+Topic: {message}
+Blog post:""
