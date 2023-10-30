@@ -53,6 +53,9 @@ tar xvzf vectorstore.tar.gz
 ```
 ## Download the model files
 ```
+In the top level project directory:
+mkdir models
+
 cd jobs
 
 Change the path in download_models.py:
@@ -62,15 +65,21 @@ Change the path in download_models.sh to point the directory where you want the 
 wget -P ../models https://huggingface.co/TheBloke/Mistral-7B-v0.1-GGUF/resolve/main/mistral-7b-v0.1.Q4_K_M.gguf
 wget -P ../models https://huggingface.co/TheBloke/Mistral-7B-Instruct-v0.1-GGUF/resolve/main/mistral-7b-instruct-v0.1.Q4_K_M.gguf
 
-The above assumes that you executed: mkdir models in the top-level directory first.
+cd ..
 
 Finally, run: 
 python download_models.py
 ```
 ## Manually set the CDSW_APP_PORT where Gradio runs
 ```
-Add an environment variable in .env that references a port of your choosing for CDSW_APP_PORT. Do not do this if you are running the Gradio application in CML as
-CML will natively expose the same environment variable.
+Add an environment variable in .env that references a port of your choosing for CDSW_APP_PORT.
+Do not do this if you are running the Gradio application in CML as CML will natively expose the same environment variable.
+```
 
+## Run the Gradio app
+```
 Wherever the model files are stored, change the LLM_MODEL_PATH entry in .env to point to the correct directory.
+Then, in the top level project directory, run:
+
+python demo.py
 ```
