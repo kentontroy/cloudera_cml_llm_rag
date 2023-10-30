@@ -39,3 +39,31 @@ For detailed instructions on how to run these scripts, see the [documentation](h
 
 # Example use cases
 ![image](./images/example-dynamic-programming.png)
+
+# Installing outside of CML (e.g. on your laptop or within an EC2)
+
+git clone https://github.com/kentontroy/cloudera_cml_llm_rag
+
+tar xvzf vectorstore.tar.gz
+
+cd jobs
+
+Change the path in download_models.py:
+For example, "print(subprocess.run(["./download_models.sh"], shell=True))" instead of "print(subprocess.run(["/home/cdsw/jobs/download_models.sh"], shell=True))"
+
+Change the path in download_models.sh to point the directory where you want the models to be stored:
+wget -P ../models https://huggingface.co/TheBloke/Mistral-7B-v0.1-GGUF/resolve/main/mistral-7b-v0.1.Q4_K_M.gguf
+wget -P ../models https://huggingface.co/TheBloke/Mistral-7B-Instruct-v0.1-GGUF/resolve/main/mistral-7b-instruct-v0.1.Q4_K_M.gguf
+
+The above assumes that you executed: mkdir models in the top-level directory first.
+
+Finally, run: 
+python download_models.py
+
+Add an environment variable in .env that references a port of your choosing for CDSW_APP_PORT. Do not do this if you are running the Gradio application in CML as
+CML will natively expose the same environment variable.
+
+
+
+Wherever the model files are stored, change the LLM_MODEL_PATH entry in .env to point to the correct directory.
+
