@@ -42,6 +42,9 @@ For detailed instructions on how to run these scripts, see the [documentation](h
 ## 1. Python code generation example
 ![image](./images/example-dynamic-programming.png)
 
+## 2. Describing what Cloudera ECS is by using RAG context
+![image](./images/example-cloudera-ecs-rag.png)
+
 ## 3. Text-to-Voice generation from an LLM response
 ![image](./images/example-play-audio.png)
 
