@@ -26,8 +26,8 @@ New versions of tokenizers > 0.13.3 should be used to support the GGUF format.
 
 ## Mistral
 Cloudera remains agnostic to the model provider and can support a variety of locally-deployed and remotely-served models.For this project,
-please note [Mistral]([https://mistral.ai/news/announcing-mistral-7b/). Its performance against LLaMA2 is compelling. Moreover,its 7 billion 
-parameter benchmarks against other larger models using 13 billion parameters is noteworthy. As a transformer model for text generation, it 
+please note [Mistral]([https://mistral.ai/news/announcing-mistral-7b/). Its performance against LLaMA2 is compelling. Mistral's 7 billion 
+parameter model benchmarks better against other larger models using 13 billion parameters. As a transformer model for text generation, it 
 uses sliding window attention and offers a large context length of 8,000 tokens. 
 
 Most importantly, it demands low memory while offering decent throughput performance, low latency,and acceptable accuracy.
@@ -43,7 +43,7 @@ For detailed instructions on how to run these scripts, see the [documentation](h
 ![image](./images/example-dynamic-programming.png)
 
 ## 3. Text-to-Voice generation from an LLM response
-![image](./images/example-play-audio)
+![image](./images/example-play-audio.png)
 
 # Installing outside of CML (e.g. on your laptop or within an EC2)
 ## Manually clone the git repo
