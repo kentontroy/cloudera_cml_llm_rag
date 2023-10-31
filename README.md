@@ -42,6 +42,9 @@ For detailed instructions on how to run these scripts, see the [documentation](h
 ## 1. Python code generation example
 ![image](./images/example-dynamic-programming.png)
 
+## 3. Text-to-Voice generation from an LLM response
+![image](./images/example-play-audio)
+
 # Installing outside of CML (e.g. on your laptop or within an EC2)
 ## Manually clone the git repo
 ```
