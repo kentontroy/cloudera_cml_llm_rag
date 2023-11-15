@@ -1,3 +1,3 @@
 import subprocess
 
-print(subprocess.run(["jobs/install_dependencies.sh"], shell=True))
+print(subprocess.run(["sh jobs/install_dependencies.sh"], shell=True))
