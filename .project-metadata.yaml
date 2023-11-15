@@ -2,7 +2,7 @@ name: LLM Inference using Mistral-7b without GPUs
 description: |
   This AMP demonstrates how to perform LLM inference in CML strictly using CPUs only. A Mistral-7b model is deployed with RAG via a FAISS vector store. 
   
-author: Cloudera Inc.
+author: Kenton Troy Davis
 specification_version: 1.0
 prototype_version: 1.0
 date: "2023-10-31"
@@ -53,5 +53,15 @@ tasks:
   - type: run_job
     entity_label: vectorstore_insert
     short_summary: Populate Vector DB with documents embeddings
-  
+    
+  - type: start_application
+    name: CML LLM with Mistral-7b
+    subdomain: cmlllm
+    script: demo.py
+    short_summary: Start CML LLM Chatbot application
+    long_summary: This application uses only CPUs
+    cpu: 4
+    memory: 32
+    environment_variables:
+      TASK_TYPE: START_APPLICATION
  
