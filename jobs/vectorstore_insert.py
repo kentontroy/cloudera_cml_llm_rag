@@ -1,3 +1,3 @@
 import subprocess
 
-print(subprocess.run(["jobs/vectorstore_insert.sh"], shell=True))
+print(subprocess.run(["sh jobs/vectorstore_insert.sh"], shell=True))
