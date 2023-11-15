@@ -1,0 +1,57 @@
+name: LLM Inference using Mistral-7b without GPUs
+description: |
+  This AMP demonstrates how to perform LLM inference in CML strictly using CPUs only. A Mistral-7b model is deployed with RAG via a FAISS vector store. 
+  
+author: Cloudera Inc.
+specification_version: 1.0
+prototype_version: 1.0
+date: "2023-10-31"
+
+runtimes:
+  - editor: Workbench
+    kernel: Python 3.9
+    edition: Nvidia GPU
+
+tasks:
+  - type: run_session
+    name: Install Python dependencies
+    script: jobs/install_dependencies.py
+    short_summary: Use pip to install dependencies 
+    long_summary: Use pip to install dependencies
+    kernel: python3
+    cpu: 2
+    memory: 8
+  
+  - type: create_job
+    name: Download Models
+    entity_label: download_models
+    script: jobs/download_models.py
+    arguments: None
+    short_summary: Create job to download pre-trained models. 
+    long_summary: Create job to download open source pre-trained models required by the LLM Chatbot application. All models are downloaded to a local directory. 
+    cpu: 1
+    memory: 4
+    environment:
+      TASK_TYPE: CREATE/RUN_JOB
+
+  - type: run_job
+    entity_label: download_models
+    short_summary: Run job to download pre-trained models.
+    
+  - type: create_job
+    name: Populate Vector store with documents embeddings
+    entity_label: vectorstore_insert
+    script: jobs/vectorstore_insert.py
+    arguments: None
+    short_summary: Create job to populate the vector store with document embeddings. 
+    long_summary: Create job to launch FAISS vector store locally and insert embeddings for documents.
+    cpu: 1
+    memory: 4
+    environment:
+      TASK_TYPE: CREATE/RUN_JOB
+
+  - type: run_job
+    entity_label: vectorstore_insert
+    short_summary: Populate Vector DB with documents embeddings
+  
+ 
