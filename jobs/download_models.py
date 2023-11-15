@@ -1,3 +1,3 @@
 import subprocess
 
-print(subprocess.run(["jobs/download_models.sh"], shell=True))
+print(subprocess.run(["sh jobs/download_models.sh"], shell=True))
