@@ -10,7 +10,7 @@ date: "2023-10-31"
 runtimes:
   - editor: Workbench
     kernel: Python 3.9
-    edition: Nvidia GPU
+    edition: Standard
 
 tasks:
   - type: run_session
