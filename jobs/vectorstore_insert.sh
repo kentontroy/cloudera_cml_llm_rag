@@ -1,3 +1,1 @@
-import subprocess
-
-print(subprocess.run(["jobs/download_models.sh"], shell=True))
+tar xvf /home/cdsw/vectorstore.tar.gz
